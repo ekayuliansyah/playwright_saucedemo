@@ -1,3 +1,21 @@
+# Playwright Saucedemo Tests
+
+Automated UI tests for [saucedemo.com](https://www.saucedemo.com) using **Playwright** + **Pytest**.
+
+## 🚀 Features
+- End-to-end tests with Playwright
+- Page Object Model (POM) structure
+- Recordings: videos, screenshots, traces
+- Fixtures & reusable components
+- Configurable via `.env` file
+
+## 📦 Installation
+Clone repository:
+```bash
+git clone https://github.com/ekayuliansyah/playwright_saucedemo.git
+cd playwright_saucedemo
+
+
 # Automation: Sauce Demo (UI) + Reqres (API)
 
 
