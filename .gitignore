@@ -1,15 +1,40 @@
+# --------------------
 # Python
+# --------------------
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
-*.env
+*.pdb
+*.egg-info/
+.eggs/
+dist/
+build/
+.env
 .venv/
+venv/
+ENV/
+*.log
 
-# Playwright artifacts
+# --------------------
+# IDE / Editor
+# --------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --------------------
+# Playwright
+# --------------------
+# hasil recording video, screenshot, trace
 artifacts/
 test-results/
+playwright-report/
+blob-report/
 
-# OS files
+# --------------------
+# OS
+# --------------------
 .DS_Store
 Thumbs.db
