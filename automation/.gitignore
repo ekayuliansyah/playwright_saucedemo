@@ -32,9 +32,22 @@ artifacts/
 test-results/
 playwright-report/
 blob-report/
+reports/
+report.html
 
 # --------------------
 # OS
 # --------------------
 .DS_Store
 Thumbs.db
+
+# --------------------
+# Media files
+# --------------------
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.webm
+*.zip
