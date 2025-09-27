@@ -1,0 +1,45 @@
+name: e2e-and-api-tests
+on:
+push:
+branches: [ main ]
+pull_request:
+branches: [ main ]
+
+
+jobs:
+tests:
+runs-on: ubuntu-latest
+strategy:
+matrix:
+python: ["3.11"]
+browser: [chromium, firefox, webkit]
+steps:
+- uses: actions/checkout@v4
+- uses: actions/setup-python@v5
+with:
+python-version: ${{ matrix.python }}
+- name: Install deps
+run: |
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+python -m playwright install --with-deps
+- name: Run smoke + regression UI
+env:
+BASE_URL_UI: https://www.saucedemo.com/
+BROWSER: ${{ matrix.browser }}
+HEADLESS: "true"
+TRACE: retain-on-failure
+VIDEO: retain-on-failure
+run: |
+pytest -m "smoke or regression" --alluredir=artifacts/allure
+- name: Run API tests
+env:
+BASE_URL_API: https://reqres.in/
+run: |
+pytest -m api -q
+- name: Upload artifacts
+uses: actions/upload-artifact@v4
+with:
+name: test-artifacts-${{ matrix.browser }}
+path: |
+artifacts/

@@ -1,0 +1,14 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "UP", "B", "C4"]
+ignore = ["E203", "W503"]
+
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
