@@ -1,6 +1,11 @@
 playwright==1.47.0
 pytest==8.3.2
 pytest-xdist==3.6.1
+
+# needed for Playwright fixtures and HTML report
+pytest-playwright
+pytest-html
+
 allure-pytest==2.13.5
 httpx==0.27.2
 python-dotenv==1.0.1
